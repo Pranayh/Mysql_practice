@@ -77,6 +77,9 @@ select* from student_tb         /* select* : it prints all rows in the table */
 drop table student_tb          /* Delete whole table */
 
 
+
+/* Alter table: It is used for change/alter table at column level */
+ 
 alter table student_tb add CGPA decimal(3,2);      /* add column in the table , 
 
 In decimal 3 is for  total no of digits eg: 3.85 and 2 is for no of digits after decimal point */
@@ -84,8 +87,17 @@ In decimal 3 is for  total no of digits eg: 3.85 and 2 is for no of digits after
 
 alter table student_tb drop column CGPA        /* remove that addded column from the table */
 
+alter table student_tb
+rename column student_id to id;           /* Used to rename column name */
 
-insert into student_tb(student_id, stu_name) values(5,'Bholu')    /* When we dont wann to store all column values */
+alter table student_tb
+modify column school_class int;              /* used to modify column datatype */
+
+
+
+ 
+
+insert into student_tb(student_id, stu_name) values(5,'Bholu')    /* When we dont wann to store all column values , want some of them should be null */
 
 select* from student_tb
 
@@ -100,12 +112,32 @@ The following constraints are commonly used in SQL:
 
 NOT NULL - Ensures that a column cannot have a NULL value
 UNIQUE - Ensures that all values in a column are different
-PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
-FOREIGN KEY - Prevents actions that would destroy links between tables
-CHECK - Ensures that the values in a column satisfies a specific condition
+AUTO-INCREMENT: allows a unique number to be generated automatically when a new record is inserted into a table
 DEFAULT - Sets a default value for a column if no value is specified
 CREATE INDEX - Used to create and retrieve data from the database very quickly
+CHECK - Ensures that the values in a column satisfies a specific condition
+ 
+ CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
 
+
+ CHECK constraint on multiple columns, use the following SQL syntax:
+ CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255),
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+);
+
+
+
+ 
 # diff:
 
 only mysql:  Auto-increment: allows a unique number to be generated automatically when a new record is inserted into a table
