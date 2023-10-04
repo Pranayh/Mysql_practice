@@ -77,7 +77,9 @@ select* from student_tb         /* select* : it prints all rows in the table */
 drop table student_tb          /* Delete whole table */
 
 
-alter table student_tb add CGPA int         /* add column in the table */
+alter table student_tb add CGPA decimal(3,2);      /* add column in the table , 
+
+In decimal 3 is for  total no of digits eg: 3.85 and 2 is for no of digits after decimal point */
 
 
 alter table student_tb drop column CGPA        /* remove that addded column from the table */
