@@ -171,10 +171,11 @@ select* from student_tb
 /* 
 Delete and Update : 
 
-The UPDATE statement is used to modify the existing records in a table.
+The UPDATE statement: It is used to modify the existing records by row wise.It updates values in table where alter is used at column level
 
-The DELETE statement is used to delete existing records in a table.
-Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. 
+The DELETE statement: It is used to delete existing records in a table. Used for particular row by using where cause.
+
+ -> Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. 
 WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in 
 the table will be deleted!
 
