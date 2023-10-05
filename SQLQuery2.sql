@@ -222,9 +222,9 @@ group by sex;
 
 --5) Find the total sales of each salesman
 
-SELECT SUM(total_sales), client_id
-FROM works_with
-GROUP BY client_id;
+select emp_id,sum(total_sales) 
+from works_with
+group by emp_id;
 
 
 /*
